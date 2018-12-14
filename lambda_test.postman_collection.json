@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "57f952cb-9aa5-4e04-8c62-899c7574c542",
+		"name": "lambda_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_googleearth_url",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3cdf4234-0fd3-464d-9f4e-6da43af2ad82",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });",
+							"pm.test(\"Test for correctly formated response URL\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.earth_engine_url).to.include(\"earthengine.googleapis.com/api/thumb?thumbid\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://itzwj9h4pe.execute-api.us-east-1.amazonaws.com/default/lambda_test",
+					"protocol": "https",
+					"host": [
+						"itzwj9h4pe",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"lambda_test"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
