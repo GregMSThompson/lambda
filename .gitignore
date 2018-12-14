@@ -1,0 +1,8 @@
+# vim swap files
+*.swp
+
+# npm modules
+node_modules/
+
+# mac os metadata files
+.DS_Store
